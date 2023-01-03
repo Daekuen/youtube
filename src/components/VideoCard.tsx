@@ -1,8 +1,8 @@
-import { Video } from '../interfaces/Video.interface';
+import { VideoType } from '../interfaces/Video.interface';
 import { formatAgo } from '../utils/date';
 import { useNavigate } from 'react-router-dom';
 
-export default function VideoCard({ video }: { video: Video }) {
+export default function VideoCard({ video }: { video: VideoType }) {
   const navigate = useNavigate();
   const { title, channelTitle, thumbnails, publishedAt } = video.snippet;
 
