@@ -21,17 +21,17 @@ export default function SearchHeader() {
   useEffect(() => setText(pathname.split('/')[2] || ''), [pathname]);
   console.log(location);
   return (
-    <header className="flex max-w-7xl w-full h-20 m-auto">
+    <header className="flex w-full py-4 px-8 border-b border-zinc-600 mb-4">
       <div
-        className="logo w-1/5 flex justify-center items-center cursor-pointer"
+        className="logo flex items-center cursor-pointer text-3xl"
         onClick={() => {
           navigate('/');
         }}
       >
-        <div className="bg-red-600 w-10 h-8 flex justify-center items-center rounded-lg mr-2 text-white text-2xl">
+        <div className="bg-brand w-10 h-8 flex justify-center items-center rounded-lg mr-2">
           <AiFillCaretRight />
         </div>
-        <h1 className="text-3xl font-bold">Youtube</h1>
+        <h1 className="font-bold">Youtube</h1>
       </div>
       <form
         className="searchBar w-full flex justify-center items-center relative"
@@ -42,9 +42,12 @@ export default function SearchHeader() {
           placeholder="Search...."
           value={text}
           onChange={handleChange}
-          className="border border-solid border-gray-300 w-1/2 py-2 px-4 rounded-2xl text-lg focus:outline-none"
+          className="w-7/12 py-2 px-4 rounded-tl-lg rounded-bl-lg outline-none bg-black text-gray-50"
         />
-        <button type="submit" className='absolute right-72 text-2xl"'>
+        <button
+          type="submit"
+          className="bg-zinc-600 px-4 py-2 rounded-tr-lg rounded-br-lg"
+        >
           <BsSearch />
         </button>
       </form>
