@@ -14,7 +14,7 @@ export default function ChannelInfo({ id, name }: ChannelInfoProps) {
     () => channelAxios(id),
     {
       refetchOnWindowFocus: false,
-      staleTime: 1000 * 60 * 60,
+      staleTime: 1000 * 60 * 5,
       suspense: true,
     }
   );

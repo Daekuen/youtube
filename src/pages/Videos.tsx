@@ -20,7 +20,7 @@ export default function Videos() {
     },
     {
       refetchOnWindowFocus: false,
-      staleTime: 1000 * 60 * 5,
+      staleTime: 1000 * 60 * 1,
     }
   );
 
