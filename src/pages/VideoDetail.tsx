@@ -18,7 +18,6 @@ export default function VideoDetail() {
     staleTime: 1000 * 60 * 60,
   });
 
-  console.log(video.snippet);
   return (
     <>
       {isLoading && <p>Loading....</p>}

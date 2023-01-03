@@ -46,8 +46,18 @@ export async function popularAxios() {
   return res.data.items;
 }
 
-// * channel.json
+// * related.json
+export async function relatedFake(id: string) {
+  const res = await axios.get(`/videos/related.json`);
 
+  const result = res.data.items.map((item: Video) => ({
+    ...item,
+    id: item.id.videoId,
+  }));
+  return result;
+}
+
+// * channel.json
 export async function channelFake(id: string) {
   const res = await axios.get(`/videos/channel.json`);
   return res.data.items;

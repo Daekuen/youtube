@@ -5,6 +5,13 @@ export interface Video {
   snippet: Snippet;
 }
 
+export interface VideoType {
+  kind: string;
+  etag: string;
+  id: string;
+  snippet: Snippet;
+}
+
 export interface ID {
   kind: string;
   videoId: string;
