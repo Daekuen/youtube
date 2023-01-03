@@ -1,9 +1,19 @@
 import axios from 'axios';
+import { Video } from '../interfaces/Video.interface';
 import { API } from './customAxios';
 
 // * json 통신
 export async function searchFake(keyword: string | undefined) {
   const res = await axios.get(`/videos/${keyword ? 'search' : 'popular'}.json`);
+
+  if (keyword) {
+    const result = res.data.items.map((item: Video) => ({
+      ...item,
+      id: item.id.videoId,
+    }));
+    return result;
+  }
+
   return res.data.items;
 }
 
@@ -17,7 +27,11 @@ export async function searchAxios(keyword: string | undefined) {
       q: keyword,
     },
   });
-  return res.data.items;
+  const result = res.data.items.map((item: Video) => ({
+    ...item,
+    id: item.id.videoId,
+  }));
+  return result;
 }
 
 // * popular 목록
