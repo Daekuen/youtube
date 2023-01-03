@@ -28,11 +28,11 @@ export default function ChannelInfo({ id, name }: ChannelInfoProps) {
         <Suspense fallback={<Loading />}>
           <div className="flex items-center">
             <img
-              className="rounded-full w-12 h-12 mr-4"
+              className="rounded-full w-10 h-10 mr-4"
               src={thumbnails.default.url}
               alt={name}
             />
-            <p className="text-xl font-semibold">{name}</p>
+            <p className="text-lg font-semibold">{name}</p>
           </div>
         </Suspense>
       )}

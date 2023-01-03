@@ -11,8 +11,8 @@ export default function VideoDetail() {
 
   return (
     <>
-      <section className="w-full flex px-4 py-2">
-        <article className="w-3/4">
+      <section className="flex flex-col lg:flex-row px-4 py-2">
+        <article className="basis-4/6 mr-4">
           <iframe
             id="player"
             typeof="text/html"
@@ -20,13 +20,13 @@ export default function VideoDetail() {
             height="640"
             src={`http://www.youtube.com/embed/${video.id}`}
           />
-          <div className="p-6">
-            <h2 className="text-3xl font-bold mt-4 mb-8">{title}</h2>
+          <div className="p-8">
+            <h2 className="text-2xl font-bold mt-4 mb-8">{title}</h2>
             <ChannelInfo id={channelId} name={channelTitle} />
-            <pre className="mt-8">{description}</pre>
+            <pre className="mt-8 whitespace-pre-wrap">{description}</pre>
           </div>
         </article>
-        <section className="w-1/4">
+        <section className="basis-2/6">
           <RelatedVideos id={video.id} />
         </section>
       </section>
