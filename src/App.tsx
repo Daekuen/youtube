@@ -3,17 +3,12 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Videos from './pages/Videos';
 import VideoDetail from './pages/VideoDetail';
 import NotFound from './pages/NotFound';
+import SearchHeader from './components/SearchHeader';
 
 function App() {
   return (
     <React.Fragment>
-      {/* <header>
-        <div></div>
-        <form action="submit">
-          <input type="text" />
-          <button>클릭</button>
-        </form>
-      </header> */}
+      <SearchHeader />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Videos />} />
