@@ -1,7 +1,7 @@
 import { useState, ChangeEvent, FormEvent, useEffect } from 'react';
 import { AiFillCaretRight } from 'react-icons/ai';
 import { BsSearch } from 'react-icons/bs';
-import { useNavigate, useParams, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function SearchHeader() {
   const { pathname } = useLocation();
@@ -34,7 +34,7 @@ export default function SearchHeader() {
         <h1 className="font-bold">Youtube</h1>
       </div>
       <form
-        className="searchBar w-full flex justify-center items-center relative"
+        className="searchBar w-full flex justify-center items-center"
         onSubmit={handleSubmit}
       >
         <input
@@ -42,7 +42,7 @@ export default function SearchHeader() {
           placeholder="Search...."
           value={text}
           onChange={handleChange}
-          className="w-7/12 py-2 px-4 rounded-tl-lg rounded-bl-lg outline-none bg-black text-gray-50"
+          className="w-7/12 py-2 px-4 rounded-tl-lg rounded-bl-lg outline-none bg-black text-gray-50 text-xl"
         />
         <button
           type="submit"
