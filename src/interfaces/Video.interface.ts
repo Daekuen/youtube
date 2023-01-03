@@ -1,4 +1,4 @@
-export interface Vedio {
+export interface Video {
   kind: string;
   etag: string;
   id: ID;

@@ -5,7 +5,6 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 export default function SearchHeader() {
   const { pathname } = useLocation();
-  const location = window.location.pathname;
   const navigate = useNavigate();
   const [text, setText] = useState<string>('');
 
@@ -19,7 +18,6 @@ export default function SearchHeader() {
   };
 
   useEffect(() => setText(pathname.split('/')[2] || ''), [pathname]);
-  console.log(location);
   return (
     <header className="flex w-full py-4 px-8 border-b border-zinc-600 mb-4">
       <div

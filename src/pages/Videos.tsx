@@ -1,8 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { popularAxios, searchAxios, searchFake } from '../api/youtube';
 import VideoCard from '../components/VideoCard';
-import { Vedio } from '../interfaces/Vedio.interface';
+import { Video } from '../interfaces/Video.interface';
 
 export default function Videos() {
   const { keyword } = useParams();
@@ -13,12 +13,14 @@ export default function Videos() {
     data: videos,
   } = useQuery(
     ['videos', keyword],
-    async () => {
-      const res = await axios.get(
-        `/videos/${keyword ? 'search' : 'popular'}.json`
-      );
-      return res.data.items;
-    },
+    () => searchFake(keyword),
+    // () => {
+    //   if (keyword) {
+    //     return searchAxios(keyword);
+    //   } else {
+    //     return popularAxios();
+    //   }
+    // },
     {
       refetchOnWindowFocus: false,
       staleTime: 1000 * 60 * 5,
@@ -32,8 +34,8 @@ export default function Videos() {
       {error && <p>Something is wrong ... 💩</p>}
       {videos && (
         <ul>
-          {videos.map((vedio: Vedio) => (
-            <VideoCard key={vedio.etag} vedio={vedio} />
+          {videos.map((video: Video) => (
+            <VideoCard key={video.etag} video={video} />
           ))}
         </ul>
       )}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Vedio } from '../interfaces/Vedio.interface';
+import { Video } from '../interfaces/Video.interface';
 
-export default function VideoCard({ vedio }: { vedio: Vedio }) {
-  return <div>{vedio.snippet.title}</div>;
+export default function VideoCard({ video }: { video: Video }) {
+  return <div>{video.snippet.title}</div>;
 }
