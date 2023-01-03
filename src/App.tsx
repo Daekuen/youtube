@@ -18,7 +18,7 @@ function App() {
             <Route path="/" element={<Videos />} />
             <Route path="/videos" element={<Videos />} />
             <Route path="/videos/:keyword" element={<Videos />} />
-            <Route path="/watch/:videoId" element={<VideoDetail />} />
+            <Route path="/videos/watch/:videoId" element={<VideoDetail />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </QueryClientProvider>

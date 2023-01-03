@@ -10,7 +10,7 @@ export default function VideoCard({ video }: { video: Video }) {
     <li
       className="mb-2 mx-2 cursor-pointer hover:scale-110 hover:ease-in duration-300"
       onClick={() => {
-        navigate(`/watch/${video.id}`);
+        navigate(`/videos/watch/${video.id}`, { state: { video } });
       }}
     >
       <img className="w-full" src={thumbnails.medium.url} alt={title} />

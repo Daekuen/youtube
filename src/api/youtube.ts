@@ -45,3 +45,10 @@ export async function popularAxios() {
   });
   return res.data.items;
 }
+
+// * channel.json
+
+export async function channelFake(id: string) {
+  const res = await axios.get(`/videos/channel.json`);
+  return res.data.items;
+}
